@@ -12,7 +12,7 @@ The goal of this project was to strengthen my understanding of React by applying
 
 ## Application Preview
 
-![Cohort Directory Screenshot](screenshots/cohort-directory.png)
+![Cohort Directory Screenshot](src/screenshots/cohort-directory.png)
 
 ## Features
 
