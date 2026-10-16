@@ -1,75 +1,103 @@
-# React + TypeScript + Vite
+# Cohort Directory
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple, responsive web application built with **React, TypeScript, and Tailwind CSS** as part of my self-directed learning journey in frontend development.
 
-Currently, two official plugins are available:
+This project focuses on applying React fundamentals through hands-on practice, including reusable components, props, event handling, conditional rendering, and dynamic list rendering.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Project Overview
 
-## React Compiler
+Cohort Directory is a student directory application that allows users to browse members, search by name, and filter members based on their active or inactive status.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The goal of this project was to strengthen my understanding of React by applying the concepts I learned to a functional application.
 
-## Expanding the ESLint configuration
+## Application Preview
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+![Cohort Directory Screenshot](screenshots/cohort-directory.png)
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Features
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Member Directory:** Display student information, including name, role, and status.
+- **Search Functionality:** Search for students by name with case-insensitive matching.
+- **Status Filtering:** Filter students by All, Active, or Inactive.
+- **Dynamic Rendering:** Display member cards using JavaScript's `map()` and `filter()` methods.
+- **Conditional Rendering:** Show a helpful message when no students match the selected search or filter.
+- **Responsive Design:** Adapt the member card layout to different screen sizes using Tailwind CSS.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Technologies Used
 
+- **React** — Component-based user interfaces
+- **TypeScript** — Type-safe JavaScript development
+- **Tailwind CSS** — Responsive styling
+- **Vite** — Development environment and build tooling
+
+## React Concepts Practiced
+
+Through this project, I practiced:
+
+- Creating and organizing reusable React components
+- Passing data between components using props
+- Using TypeScript to define component props
+- Handling user interactions with `onChange` and `onClick`
+- Managing UI state with the `useState` hook
+- Rendering lists dynamically using `map()`
+- Filtering data using `filter()`
+- Applying conditional rendering with ternary operators
+- Using Tailwind CSS utility classes for styling
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Header.tsx
+│   ├── MemberCard.tsx
+│   ├── MemberList.tsx
+│   ├── SearchBar.tsx
+│   ├── FilterBar.tsx
+│   └── EmptyState.tsx
+├── App.tsx
+├── main.tsx
+└── index.css
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+git clone https://github.com/nourdarwish20/cohort-directory.git
 ```
+
+Navigate to the project:
+
+```bash
+cd cohort-directory
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal.
+
+## Learning Journey
+
+This project was developed as part of my independent study of React fundamentals, following practical exercises from a frontend development course.
+
+Rather than focusing only on theoretical concepts, I used this application to practice implementing features, understanding component communication, and organizing code into reusable pieces.
+
+It represents one of my hands-on steps toward strengthening my frontend development and software engineering skills.
+
+---
+
+**Project Type:** Self-Learning / Frontend Practice
+
+**Author:** [Nour Darwish](https://github.com/nourdarwish20)
