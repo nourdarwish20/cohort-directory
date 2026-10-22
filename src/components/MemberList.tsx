@@ -1,26 +1,16 @@
 import MemberCard from "./MemberCard";
-
-type Student = {
-  id: number;
-  name: string;
-  role: string;
-  active: boolean;
-};
+import type { Member } from "../types";
 
 type MemberListProps = {
-  students: Student[];
+  members: Member[];
+  onRemove: (id: number) => void;
 };
 
-function MemberList({ students }: MemberListProps) {
+function MemberList({ members, onRemove }: MemberListProps) {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-6">
-      {students.map((student) => (
-        <MemberCard
-          key={student.id}
-          name={student.name}
-          role={student.role}
-          active={student.active}
-        />
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6">
+      {members.map((member) => (
+        <MemberCard key={member.id} member={member} onRemove={onRemove} />
       ))}
     </div>
   );

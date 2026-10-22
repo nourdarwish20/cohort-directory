@@ -1,19 +1,37 @@
-type MemberProps = {
-  name: string;
-  role: string;
-  active: boolean;
+import type { Member } from "../types";
+
+type MemberCardProps = {
+  member: Member;
+  onRemove: (id: number) => void;
 };
 
-function MemberCard({ name, role, active }: MemberProps) {
+function MemberCard({ member, onRemove }: MemberCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
-      <h2 className="text-xl font-bold text-gray-900">{name}</h2>
+      <h2 className="text-xl font-bold text-gray-900">{member.name}</h2>
 
-      <p className="text-gray-500">{role}</p>
+      <p className="text-gray-600">{member.title}</p>
 
-      <p className={active ? "text-green-600" : "text-red-500"}>
-        {active ? "Active" : "Inactive"}
+      <p className="text-sm text-gray-500 my-2">{member.quote}</p>
+
+      <p className="text-sm text-gray-500">{member.email}</p>
+
+      <p
+        className={
+          member.level === "senior"
+            ? "text-green-600 font-medium mt-2"
+            : "text-blue-600 font-medium mt-2"
+        }
+      >
+        {member.level}
       </p>
+
+      <button
+        onClick={() => onRemove(member.id)}
+        className="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg mt-3"
+      >
+        Remove
+      </button>
     </div>
   );
 }
