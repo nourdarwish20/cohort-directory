@@ -1,14 +1,14 @@
 # Cohort Directory
 
-A simple, responsive web application built with **React, TypeScript, and Tailwind CSS** as part of my self-directed learning journey in frontend development.
+A responsive web application built with **React, TypeScript, and Tailwind CSS** as part of my self-directed learning journey in frontend development and software engineering.
 
-This project focuses on applying React fundamentals through hands-on practice, including reusable components, props, event handling, conditional rendering, and dynamic list rendering.
+This project started as a simple member directory and was progressively enhanced with API integration, state management, React lifecycle hooks, and performance optimization.
 
 ## Project Overview
 
-Cohort Directory is a student directory application that allows users to browse members, search by name, and filter members based on their active or inactive status.
+Cohort Directory is an interactive web application that allows users to browse, search, filter, and manage members.
 
-The goal of this project was to strengthen my understanding of React by applying the concepts I learned to a functional application.
+The project was developed through practical exercises focused on understanding React fundamentals, component architecture, asynchronous data fetching, and performance optimization.
 
 ## Application Preview
 
@@ -16,33 +16,66 @@ The goal of this project was to strengthen my understanding of React by applying
 
 ## Features
 
-- **Member Directory:** Display student information, including name, role, and status.
-- **Search Functionality:** Search for students by name with case-insensitive matching.
-- **Status Filtering:** Filter students by All, Active, or Inactive.
-- **Dynamic Rendering:** Display member cards using JavaScript's `map()` and `filter()` methods.
-- **Conditional Rendering:** Show a helpful message when no students match the selected search or filter.
-- **Responsive Design:** Adapt the member card layout to different screen sizes using Tailwind CSS.
+### Member Management
+
+- **Dynamic Member Directory:** Fetch and display members from an external REST API.
+- **Live Search:** Search members by name with case-insensitive matching.
+- **Seniority Filtering:** Filter members by All, Junior, or Senior.
+- **Member Removal:** Remove individual members from the displayed directory.
+- **Adjustable Member Count:** Choose to fetch 3, 5, or 10 members.
+
+### React Lifecycle & Performance
+
+- **API Integration:** Retrieve user information from JSONPlaceholder using the Fetch API.
+- **State Management:** Manage members, search queries, and filters using `useState`.
+- **Lifecycle Management:** Fetch data using `useEffect` and handle cleanup.
+- **Debouncing:** Delay API requests to avoid unnecessary calls when the selected member limit changes.
+- **Input Focus:** Automatically focus the search field using `useRef`.
+- **Memoization:** Optimize cohort score calculations using `useMemo`.
+- **Conditional Rendering:** Display loading, error, and empty-result messages.
+
+### User Interface
+
+- Responsive member cards and grid layout.
+- Reusable React components.
+- Tailwind CSS styling.
 
 ## Technologies Used
 
-- **React** — Component-based user interfaces
-- **TypeScript** — Type-safe JavaScript development
-- **Tailwind CSS** — Responsive styling
-- **Vite** — Development environment and build tooling
+| Technology      | Purpose                              |
+| --------------- | ------------------------------------ |
+| React           | Building reusable UI components      |
+| TypeScript      | Type safety and component interfaces |
+| Tailwind CSS    | Responsive UI styling                |
+| Vite            | Development and production builds    |
+| Fetch API       | Retrieving external data             |
+| JSONPlaceholder | Sample REST API for member data      |
 
 ## React Concepts Practiced
 
-Through this project, I practiced:
+**React Fundamentals**
 
-- Creating and organizing reusable React components
-- Passing data between components using props
-- Using TypeScript to define component props
-- Handling user interactions with `onChange` and `onClick`
-- Managing UI state with the `useState` hook
-- Rendering lists dynamically using `map()`
-- Filtering data using `filter()`
-- Applying conditional rendering with ternary operators
-- Using Tailwind CSS utility classes for styling
+- Functional components and component composition
+- Props and destructuring
+- TypeScript types and interfaces
+- Event handling with `onClick` and `onChange`
+- Dynamic rendering with `map()` and `filter()`
+- Conditional rendering
+
+**React Hooks & Lifecycle**
+
+- `useState` — Managing application state
+- `useEffect` — Data fetching and side effects
+- `useRef` — DOM references and debounce timers
+- `useMemo` — Memoizing expensive calculations
+
+**Additional Concepts**
+
+- Asynchronous JavaScript with `async/await`
+- API response transformation
+- Effect cleanup and request cancellation
+- Re-rendering and React state updates
+- Responsive design with Tailwind CSS
 
 ## Project Structure
 
@@ -55,6 +88,11 @@ src/
 │   ├── SearchBar.tsx
 │   ├── FilterBar.tsx
 │   └── EmptyState.tsx
+├── utils/
+│   └── computeCohortScore.ts
+├── screenshots/
+│   └── cohort-directory.png
+├── types.ts
 ├── App.tsx
 ├── main.tsx
 └── index.css
@@ -62,25 +100,25 @@ src/
 
 ## Getting Started
 
-Clone the repository:
+**1. Clone the repository**
 
 ```bash
 git clone https://github.com/nourdarwish20/cohort-directory.git
 ```
 
-Navigate to the project:
+**2. Navigate to the project**
 
 ```bash
 cd cohort-directory
 ```
 
-Install dependencies:
+**3. Install dependencies**
 
 ```bash
 npm install
 ```
 
-Start the development server:
+**4. Start the development server**
 
 ```bash
 npm run dev
@@ -88,16 +126,36 @@ npm run dev
 
 Open the local URL displayed in your terminal.
 
+**5. Build for production**
+
+```bash
+npm run build
+```
+
+## Development Journey
+
+### Module 2 — Building Components
+
+The initial version focused on React fundamentals, including reusable components, props, event handling, list rendering, and filtering.
+
+I built the first version of the directory using a local array of members and organized the interface into reusable components.
+
+### Module 3 — State & Lifecycle
+
+The application was then enhanced with asynchronous API integration, React lifecycle hooks, debouncing, member management, and memoization.
+
+This stage helped me better understand how React handles state updates, side effects, component re-rendering, and expensive calculations.
+
 ## Learning Journey
 
-This project was developed as part of my independent study of React fundamentals, following practical exercises from a frontend development course.
+This project is part of my independent learning journey, supported by practical exercises from the **Software Engineering Excellence course by Sami Shames Deen**.
 
-Rather than focusing only on theoretical concepts, I used this application to practice implementing features, understanding component communication, and organizing code into reusable pieces.
+My focus was not only on completing the application, but also on understanding how its individual components interact, how data flows through React, and how to structure maintainable frontend code.
 
-It represents one of my hands-on steps toward strengthening my frontend development and software engineering skills.
+The project reflects my ongoing commitment to strengthening my software engineering skills through continuous learning and hands-on development.
 
 ---
 
-**Project Type:** Self-Learning / Frontend Practice
+**Project Type:** Self-Learning / React Practice
 
 **Author:** [Nour Darwish](https://github.com/nourdarwish20)
