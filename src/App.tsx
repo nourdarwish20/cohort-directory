@@ -136,9 +136,14 @@ function App() {
 
   // 7. Contact member and record activity
   function contactMember(id: number) {
-    recordActivity(`Contacted member ${id}`);
-  }
+    const member = members.find((m) => m.id === id);
 
+    if (!member) return;
+
+    recordActivity(`Contacted ${member.name}`);
+
+    window.location.href = `mailto:${member.email}`;
+  }
   // 8. Calculate cohort score using useMemo
   const score = useMemo(() => {
     return computeCohortScore(members);
