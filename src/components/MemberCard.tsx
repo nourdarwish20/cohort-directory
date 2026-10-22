@@ -3,9 +3,10 @@ import type { Member } from "../types";
 type MemberCardProps = {
   member: Member;
   onRemove: (id: number) => void;
+  onContact: (id: number) => void;
 };
 
-function MemberCard({ member, onRemove }: MemberCardProps) {
+function MemberCard({ member, onRemove, onContact }: MemberCardProps) {
   return (
     <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
       <h2 className="text-xl font-bold text-gray-900">{member.name}</h2>
@@ -26,12 +27,21 @@ function MemberCard({ member, onRemove }: MemberCardProps) {
         {member.level}
       </p>
 
-      <button
-        onClick={() => onRemove(member.id)}
-        className="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg mt-3"
-      >
-        Remove
-      </button>
+      <div className="flex gap-2 mt-3">
+        <button
+          onClick={() => onContact(member.id)}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-lg"
+        >
+          Contact
+        </button>
+
+        <button
+          onClick={() => onRemove(member.id)}
+          className="bg-red-500 hover:bg-red-600 text-white px-3 py-2 rounded-lg"
+        >
+          Remove
+        </button>
+      </div>
     </div>
   );
 }
